@@ -9,7 +9,7 @@ export function Home() {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20" id="hero">
-        <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: 'url(/images/maribordrava.jpg)' }}></div>
+        <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: 'url(/maribordrava.jpg)' }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/60 z-10"></div>
         
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
@@ -50,7 +50,7 @@ export function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Big Open */}
             <Link to="/big-open" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/images/bigopen/hero1.avif)' }}>
+              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/bigopen/hero1.avif)' }}>
                 <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Best Seller</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <div className="font-display text-4xl">€120 <span className="text-sm font-sans opacity-80">/ night</span></div>
@@ -85,7 +85,7 @@ export function Home() {
 
             {/* LTE High */}
             <Link to="/lte-high" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/images/ltehigh/livingroom.jpg)' }}>
+              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/ltehigh/livingroom.jpg)' }}>
                 <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Wellness</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <div className="font-display text-4xl">€100 <span className="text-sm font-sans opacity-80">/ night</span></div>
@@ -120,7 +120,7 @@ export function Home() {
 
             {/* High Q */}
             <Link to="/high-q" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/images/highun/living room.avif)' }}>
+              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/highun/living room.avif)' }}>
                 <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Premium</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <div className="font-display text-4xl">€90 <span className="text-sm font-sans opacity-80">/ night</span></div>
@@ -161,7 +161,7 @@ export function Home() {
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[500px] group">
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: 'url(/images/highun/garden.avif)' }}></div>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: 'url(/highun/garden.avif)' }}></div>
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
             </div>
             <div className="lg:pl-12">
@@ -275,7 +275,7 @@ export function Home() {
           <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-xl flex flex-col md:flex-row items-center gap-12">
             <div className="shrink-0 relative">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-8 border-white shadow-lg">
-                <img src="/images/jernej host.png" alt="Jernej" className="w-full h-full object-cover" />
+                <img src="/jernej host.png" alt="Jernej" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-gold text-primary p-3 rounded-full shadow-lg">
                 <Star size={24} className="fill-primary" />

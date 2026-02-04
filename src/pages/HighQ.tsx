@@ -7,7 +7,7 @@ export function HighQ() {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: 'url(/images/highun/bedroom1.avif)' }}></div>
+        <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: 'url(/highun/bedroom1.avif)' }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/60 z-10"></div>
         
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto pt-20">
@@ -85,10 +85,10 @@ export function HighQ() {
 
             {/* Gallery Grid */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/images/highun/livingroom mirror.jpg)' }}></div>
-              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/images/highun/kitchen.avif)' }}></div>
-              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/images/highun/bathroom.jpg)' }}></div>
-              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/images/highun/garden.avif)' }}></div>
+              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/highun/livingroom mirror.jpg)' }}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/highun/kitchen.avif)' }}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/highun/bathroom.jpg)' }}></div>
+              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/highun/garden.avif)' }}></div>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@ export function HighQ() {
           <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12">
             <div className="shrink-0">
                <div className="w-56 h-56 rounded-full overflow-hidden border-8 border-white shadow-xl mx-auto lg:mx-0">
-                  <img src="/images/jernej host.png" alt="Jernej" className="w-full h-full object-cover" />
+                  <img src="/jernej host.png" alt="Jernej" className="w-full h-full object-cover" />
                </div>
             </div>
             <div className="flex-grow text-center lg:text-left">
