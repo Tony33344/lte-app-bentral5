@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;300;400;500;600;700&family=Playfair+Display:wght@300;400;500;600;700;900&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --primary: #0a0a0a;
+  --gold: #d4af37;
+  --gold-light: #f4e5c2;
+  --accent: #c9302c;
+  --light: #fafafa;
+  --gray: #888;
+  --border: #e5e5e5;
+  --shadow: 0 20px 40px rgba(0,0,0,0.08);
+  --shadow-hover: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+@theme {
+  --color-primary: #0a0a0a;
+  --color-gold: #d4af37;
+  --color-gold-light: #f4e5c2;
+  --color-accent: #c9302c;
+  --color-light: #fafafa;
+  --color-gray: #888888;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-display: 'Bebas Neue', cursive;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-primary);
+  background: white;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
