@@ -7,9 +7,11 @@ import { LTEHigh } from './pages/LTEHigh';
 import { HighQ } from './pages/HighQ';
 import { BaronHouse } from './pages/BaronHouse';
 import { LightboxProvider } from './components/ImageLightbox';
+import { I18nProvider } from './i18n/context';
 
 export function App() {
   return (
+    <I18nProvider>
     <LightboxProvider>
       <Router>
         <Layout>
@@ -23,5 +25,6 @@ export function App() {
         </Layout>
       </Router>
     </LightboxProvider>
+    </I18nProvider>
   );
 }

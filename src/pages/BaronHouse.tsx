@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { Wifi, Utensils, Zap, Car, Dog, Star, ShieldCheck, Clock, VolumeX, Ban, GlassWater, Footprints, Info, Users, Bed, Bath, Lock, Flame, Sparkles, DoorOpen, Tv } from 'lucide-react';
 import { BentralWidget } from '../components/BentralWidget';
 import { useLightbox } from '../components/ImageLightbox';
+import { useI18n } from '../i18n/context';
 
 export function BaronHouse() {
   const { open } = useLightbox();
+  const { t } = useI18n();
 
   const galleryImages = [
     '/Baron/livingroom2.jpeg',
@@ -55,7 +57,7 @@ export function BaronHouse() {
       {/* Breadcrumb */}
       <div className="bg-gray-50 py-4 border-b border-gray-100">
         <div className="max-w-[1400px] mx-auto px-6 text-sm text-gray-500">
-          <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+          <Link to="/" className="hover:text-gold transition-colors">{t.shared.home}</Link>
           <span className="mx-2">/</span>
           <span className="text-primary font-medium">Baron House Apartment</span>
         </div>
@@ -70,8 +72,8 @@ export function BaronHouse() {
                 <Lock size={32} className="text-gold" />
               </div>
               <div>
-                <h3 className="text-xl font-medium mb-1">Arrive on Your Own Terms</h3>
-                <p className="text-white/70 text-sm max-w-md">Your keys are waiting in a secure keylocker. Check in anytime, no contact needed — enjoy complete privacy from the moment you arrive.</p>
+                <h3 className="text-xl font-medium mb-1">{t.privacy.arriveTitle}</h3>
+                <p className="text-white/70 text-sm max-w-md">{t.privacy.arriveDescShort}</p>
               </div>
             </div>
             <div className="hidden md:block w-px h-16 bg-white/20"></div>
@@ -80,8 +82,8 @@ export function BaronHouse() {
                 <DoorOpen size={32} className="text-gold" />
               </div>
               <div>
-                <h3 className="text-xl font-medium mb-1">Private Entrance</h3>
-                <p className="text-white/70 text-sm max-w-md">Your own separate entrance and mini terrace ensure full discretion. It's your private space — no shared hallways, no interruptions.</p>
+                <h3 className="text-xl font-medium mb-1">{t.privacy.entranceTitle}</h3>
+                <p className="text-white/70 text-sm max-w-md">{t.privacy.entranceDesc}</p>
               </div>
             </div>
           </div>
@@ -145,24 +147,24 @@ export function BaronHouse() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">Luxury Included</span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Apartment Amenities</h2>
+            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">{t.shared.luxuryIncluded}</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.shared.apartmentAmenities}</h2>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
              {[
-               { icon: <Users />, title: "Capacity", desc: "Up to 4 Guests" },
-               { icon: <Bed />, title: "1 Bedroom", desc: "King-size bed" },
-               { icon: <Bath />, title: "1 Bathroom", desc: "Floor heating & LED" },
-               { icon: <Flame />, title: "IR Sauna", desc: "Private infrared sauna" },
-               { icon: <Utensils />, title: "Full Kitchen", desc: "Fully equipped" },
-               { icon: <Wifi />, title: "High-Speed WiFi", desc: "Free throughout" },
-               { icon: <Car />, title: "Free Parking", desc: "Private secure spot" },
-               { icon: <Dog />, title: "Pet Friendly", desc: "All pets welcome" },
-               { icon: <Tv />, title: "Cable TV", desc: "With ambient backlight" },
-               { icon: <Zap />, title: "Air Conditioning", desc: "Climate control" },
-               { icon: <Lock />, title: "Self Check-in", desc: "Keylocker — arrive anytime" },
-               { icon: <Sparkles />, title: "Aroma Therapy", desc: "Inside sauna experience" },
+               { icon: <Users />, title: t.baron.capacity, desc: t.baron.capacityDesc },
+               { icon: <Bed />, title: t.baron.bedroomTitle, desc: t.baron.bedroomDesc },
+               { icon: <Bath />, title: t.baron.bathroomTitle, desc: t.baron.bathroomDesc },
+               { icon: <Flame />, title: t.baron.saunaAmenity, desc: t.baron.saunaAmenityDesc },
+               { icon: <Utensils />, title: t.baron.kitchenTitle, desc: t.baron.kitchenDesc },
+               { icon: <Wifi />, title: t.baron.wifiTitle, desc: t.baron.wifiDesc },
+               { icon: <Car />, title: t.baron.parkingTitle, desc: t.baron.parkingDesc },
+               { icon: <Dog />, title: t.baron.petsTitle, desc: t.baron.petsDesc },
+               { icon: <Tv />, title: t.baron.tvTitle, desc: t.baron.tvDesc },
+               { icon: <Zap />, title: t.baron.acTitle, desc: t.baron.acDesc },
+               { icon: <Lock />, title: t.baron.checkinTitle, desc: t.baron.checkinDesc },
+               { icon: <Sparkles />, title: t.baron.aromaTitle, desc: t.baron.aromaDesc },
              ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex items-start gap-4">
                 <div className="p-3 bg-gold/10 rounded-full text-gold shrink-0">
@@ -182,31 +184,31 @@ export function BaronHouse() {
       <section className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">The Details</span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Thoughtful Touches</h2>
-            <p className="text-gray-500 text-lg">Every detail is designed to make your stay special</p>
+            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">{t.shared.theDetails}</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.shared.thoughtfulTouches}</h2>
+            <p className="text-gray-500 text-lg">{t.shared.touchesSubtitle}</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/Baron/sparklingwinedetail.jpg', touchImages)}>
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/Baron/sparklingwinedetail.jpg)' }}></div>
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Welcome Sparkling</span>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">{t.baron.welcomeSparkling}</span>
             </div>
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/Baron/pilowdetail.jpg', touchImages)}>
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/Baron/pilowdetail.jpg)' }}></div>
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Organic Pillows</span>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">{t.baron.organicPillows}</span>
             </div>
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/Baron/gamesdetail.jpg', touchImages)}>
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/Baron/gamesdetail.jpg)' }}></div>
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Board Games</span>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">{t.baron.boardGames}</span>
             </div>
             <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/Baron/infomaribordetail.avif', touchImages)}>
               <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/Baron/infomaribordetail.avif)' }}></div>
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Local Guide</span>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">{t.baron.localGuide}</span>
             </div>
           </div>
         </div>
@@ -222,12 +224,12 @@ export function BaronHouse() {
                </div>
             </div>
             <div className="flex-grow text-center lg:text-left">
-              <span className="text-gold font-semibold uppercase tracking-wider text-sm mb-2 block">Meet Your Host</span>
-              <h3 className="text-3xl font-serif mb-6">Hosted by Jernej</h3>
+              <span className="text-gold font-semibold uppercase tracking-wider text-sm mb-2 block">{t.shared.meetHost}</span>
+              <h3 className="text-3xl font-serif mb-6">{t.shared.hostedByJernej}</h3>
               
               <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-6">
-                 <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-sm font-medium"><Star size={16} className="text-gold fill-gold" /> 1,131 Reviews</span>
-                 <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-sm font-medium"><ShieldCheck size={16} className="text-gold" /> 8 Years Hosting</span>
+                 <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-sm font-medium"><Star size={16} className="text-gold fill-gold" /> 1,131 {t.hostSection.reviews}</span>
+                 <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-sm font-medium"><ShieldCheck size={16} className="text-gold" /> 8 {t.hostSection.yearsHosting}</span>
               </div>
               
               <p className="text-gray-500 text-lg leading-relaxed mb-6 italic">
@@ -240,14 +242,14 @@ export function BaronHouse() {
             {/* House Rules */}
             <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-lg">
               <h4 className="text-xl font-medium mb-6 flex items-center gap-2">
-                <Info className="text-gold" /> House Rules
+                <Info className="text-gold" /> {t.shared.houseRules}
               </h4>
               <ul className="space-y-4 text-gray-600">
-                <li className="flex items-center gap-3"><Clock size={18} className="text-gold" /> Check-in: After 4:00 PM</li>
-                <li className="flex items-center gap-3"><Clock size={18} className="text-gold" /> Checkout: Before 11:00 AM</li>
-                <li className="flex items-center gap-3"><VolumeX size={18} className="text-gold" /> Quiet hours: 11:00 PM - 7:00 AM</li>
-                <li className="flex items-center gap-3"><Ban size={18} className="text-gold" /> No smoking</li>
-                <li className="flex items-center gap-3"><GlassWater size={18} className="text-gold" /> No parties or events</li>
+                <li className="flex items-center gap-3"><Clock size={18} className="text-gold" /> {t.shared.checkIn}: After 4:00 PM</li>
+                <li className="flex items-center gap-3"><Clock size={18} className="text-gold" /> {t.shared.checkOut}: Before 11:00 AM</li>
+                <li className="flex items-center gap-3"><VolumeX size={18} className="text-gold" /> {t.shared.quietHours}: 11:00 PM - 7:00 AM</li>
+                <li className="flex items-center gap-3"><Ban size={18} className="text-gold" /> {t.shared.noSmoking}</li>
+                <li className="flex items-center gap-3"><GlassWater size={18} className="text-gold" /> {t.shared.noParties}</li>
                 <li className="flex items-center gap-3"><Footprints size={18} className="text-gold" /> No shoes inside the house</li>
               </ul>
             </div>
@@ -279,8 +281,8 @@ export function BaronHouse() {
       <section id="booking" className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
            <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">Reserve Your Stay</span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Book Baron House</h2>
+            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">{t.shared.reserveStay}</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.booking.bookBaron}</h2>
           </div>
           
           <div className="max-w-4xl mx-auto bg-gray-50 rounded-3xl p-8 md:p-12">

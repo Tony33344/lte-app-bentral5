@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Bed, Bath, Star, Crown, Car, Wifi, Tv, Utensils, Zap, Briefcase, Dog, Key, TreePine, Flame, ChevronRight, Check, Lock, DoorOpen } from 'lucide-react';
 import { BentralWidget } from '../components/BentralWidget';
+import { useI18n } from '../i18n/context';
 
 export function Home() {
   const [activeTab, setActiveTab] = useState('baron');
+  const { t } = useI18n();
 
   const unitIds: Record<string, string> = {
     baron: '5f7a6b314d515f4e',
@@ -21,29 +23,29 @@ export function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/60 z-10"></div>
         
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
-          <span className="inline-block bg-gold text-primary px-6 py-2 rounded-full font-semibold text-sm uppercase tracking-wider mb-8">Maribor Luxury Collection</span>
+          <span className="inline-block bg-gold text-primary px-6 py-2 rounded-full font-semibold text-sm uppercase tracking-wider mb-8">{t.hero.badge}</span>
           <h1 className="font-display text-6xl md:text-8xl lg:text-9xl mb-6 leading-[0.9] text-shadow-lg">
             LTE <span className="text-gold">Apartments</span>
           </h1>
           <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto leading-relaxed text-shadow-md opacity-90 mb-12">
-            Experience the pinnacle of comfort in our exclusive collection of premium apartments in the heart of Maribor
+            {t.hero.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
              <Link to="/baron-house" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium transition-all group">
-                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Private & Intimate</span>
+                <span className="block text-xs uppercase tracking-widest text-gold mb-1">{t.hero.baronLabel}</span>
                 <span className="text-lg">Baron House</span>
              </Link>
              <Link to="/big-open" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium transition-all group">
-                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Family Terrace</span>
+                <span className="block text-xs uppercase tracking-widest text-gold mb-1">{t.hero.bigOpenLabel}</span>
                 <span className="text-lg">Big Open</span>
              </Link>
              <Link to="/lte-high" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium transition-all group">
-                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Playful Open Space</span>
+                <span className="block text-xs uppercase tracking-widest text-gold mb-1">{t.hero.lteHighLabel}</span>
                 <span className="text-lg">LTE High</span>
              </Link>
              <Link to="/high-q" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium transition-all group">
-                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Business Comfort</span>
+                <span className="block text-xs uppercase tracking-widest text-gold mb-1">{t.hero.highQLabel}</span>
                 <span className="text-lg">High Q</span>
              </Link>
           </div>
@@ -54,33 +56,33 @@ export function Home() {
       <section id="properties" className="py-24 md:py-32 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">Our Portfolio</span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Discover Your Perfect Stay</h2>
-            <p className="text-gray-500 text-lg leading-relaxed">Each apartment is uniquely designed to provide an unforgettable experience in the heart of Maribor</p>
+            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">{t.properties.badge}</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.properties.title}</h2>
+            <p className="text-gray-500 text-lg leading-relaxed">{t.properties.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Baron House */}
             <Link to="/baron-house" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/Baron/livingroom1.jpeg)' }}>
-                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Private & Intimate</div>
+                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">{t.hero.baronLabel}</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="font-display text-4xl">€90 <span className="text-sm font-sans opacity-80">/ night</span></div>
+                  <div className="font-display text-4xl">€90 <span className="text-sm font-sans opacity-80">{t.properties.perNight}</span></div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-serif mb-3 group-hover:text-gold transition-colors">Baron House</h3>
-                <p className="text-gray-500 mb-6 line-clamp-2">Cosy one-bedroom retreat with private IR sauna, ambient lighting, and complete privacy</p>
+                <p className="text-gray-500 mb-6 line-clamp-2">{t.properties.baronDesc}</p>
                 <div className="flex justify-between items-center py-6 border-t border-gray-100 mb-6">
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Users size={18} className="text-gold" /> 4 Guests
+                    <Users size={18} className="text-gold" /> 4 {t.properties.guests}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Bed size={18} className="text-gold" /> 1 Bed
+                    <Bed size={18} className="text-gold" /> 1 {t.properties.bed}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Bath size={18} className="text-gold" /> 1 Bath
+                    <Bath size={18} className="text-gold" /> 1 {t.properties.bath}
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -89,7 +91,7 @@ export function Home() {
                     <span>4.67 (349)</span>
                   </div>
                   <span className="text-primary font-medium text-sm uppercase tracking-wider group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                    Details <ChevronRight size={16} />
+                    {t.properties.details} <ChevronRight size={16} />
                   </span>
                 </div>
               </div>
@@ -98,24 +100,24 @@ export function Home() {
             {/* Big Open */}
             <Link to="/big-open" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/bigopen/hero1.avif)' }}>
-                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Family Terrace</div>
+                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">{t.hero.bigOpenLabel}</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="font-display text-4xl">€120 <span className="text-sm font-sans opacity-80">/ night</span></div>
+                  <div className="font-display text-4xl">€120 <span className="text-sm font-sans opacity-80">{t.properties.perNight}</span></div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-serif mb-3 group-hover:text-gold transition-colors">Big Open Apartment</h3>
-                <p className="text-gray-500 mb-6 line-clamp-2">Spacious 90m² luxury apartment with expansive terrace, private garden, and premium amenities</p>
+                <p className="text-gray-500 mb-6 line-clamp-2">{t.properties.bigOpenDesc}</p>
                 <div className="flex justify-between items-center py-6 border-t border-gray-100 mb-6">
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Users size={18} className="text-gold" /> 7 Guests
+                    <Users size={18} className="text-gold" /> 7 {t.properties.guests}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Bed size={18} className="text-gold" /> 2 Beds
+                    <Bed size={18} className="text-gold" /> 2 {t.properties.beds}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Bath size={18} className="text-gold" /> 1 Bath
+                    <Bath size={18} className="text-gold" /> 1 {t.properties.bath}
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -124,7 +126,7 @@ export function Home() {
                     <span>4.67 (209)</span>
                   </div>
                   <span className="text-primary font-medium text-sm uppercase tracking-wider group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                    Details <ChevronRight size={16} />
+                    {t.properties.details} <ChevronRight size={16} />
                   </span>
                 </div>
               </div>
@@ -133,24 +135,24 @@ export function Home() {
             {/* LTE High */}
             <Link to="/lte-high" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/ltehigh/livingroom.jpg)' }}>
-                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Playful Open Space</div>
+                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">{t.hero.lteHighLabel}</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="font-display text-4xl">€100 <span className="text-sm font-sans opacity-80">/ night</span></div>
+                  <div className="font-display text-4xl">€100 <span className="text-sm font-sans opacity-80">{t.properties.perNight}</span></div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-serif mb-3 group-hover:text-gold transition-colors">LTE High Apartment</h3>
-                <p className="text-gray-500 mb-6 line-clamp-2">Unique high-ceiling apartment filled with positive energy. Open space concept with aerial yoga hammock</p>
+                <p className="text-gray-500 mb-6 line-clamp-2">{t.properties.lteHighDesc}</p>
                 <div className="flex justify-between items-center py-6 border-t border-gray-100 mb-6">
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Users size={18} className="text-gold" /> 6 Guests
+                    <Users size={18} className="text-gold" /> 6 {t.properties.guests}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Bed size={18} className="text-gold" /> 1 Bed
+                    <Bed size={18} className="text-gold" /> 1 {t.properties.bed}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Bath size={18} className="text-gold" /> 1.5 Bath
+                    <Bath size={18} className="text-gold" /> 1.5 {t.properties.bath}
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -159,7 +161,7 @@ export function Home() {
                     <span>4.71 (163)</span>
                   </div>
                   <span className="text-primary font-medium text-sm uppercase tracking-wider group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                    Details <ChevronRight size={16} />
+                    {t.properties.details} <ChevronRight size={16} />
                   </span>
                 </div>
               </div>
@@ -168,24 +170,24 @@ export function Home() {
             {/* High Q */}
             <Link to="/high-q" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/highun/living%20room.avif)' }}>
-                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Business Comfort</div>
+                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">{t.hero.highQLabel}</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <div className="font-display text-4xl">€90 <span className="text-sm font-sans opacity-80">/ night</span></div>
+                  <div className="font-display text-4xl">€90 <span className="text-sm font-sans opacity-80">{t.properties.perNight}</span></div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-serif mb-3 group-hover:text-gold transition-colors">High Q Apartment</h3>
-                <p className="text-gray-500 mb-6 line-clamp-2">High-ceiling apartment near city center with designer kitchen, SMART TV, and outdoor terrace</p>
+                <p className="text-gray-500 mb-6 line-clamp-2">{t.properties.highQDesc}</p>
                 <div className="flex justify-between items-center py-6 border-t border-gray-100 mb-6">
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Users size={18} className="text-gold" /> 6 Guests
+                    <Users size={18} className="text-gold" /> 6 {t.properties.guests}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Bed size={18} className="text-gold" /> 2 Beds
+                    <Bed size={18} className="text-gold" /> 2 {t.properties.beds}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Bath size={18} className="text-gold" /> 1.5 Bath
+                    <Bath size={18} className="text-gold" /> 1.5 {t.properties.bath}
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -194,7 +196,7 @@ export function Home() {
                     <span>4.53 (115)</span>
                   </div>
                   <span className="text-primary font-medium text-sm uppercase tracking-wider group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                    Details <ChevronRight size={16} />
+                    {t.properties.details} <ChevronRight size={16} />
                   </span>
                 </div>
               </div>
@@ -212,16 +214,16 @@ export function Home() {
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
             </div>
             <div className="lg:pl-12">
-              <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">The Destination</span>
-              <h2 className="text-4xl md:text-5xl font-light mb-8">Discover Maribor</h2>
+              <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">{t.maribor.badge}</span>
+              <h2 className="text-4xl md:text-5xl font-light mb-8">{t.maribor.title}</h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-6">
-                Nestled between the lush green Pohorje Mountains and the sparkling Drava River, Maribor offers a perfect blend of natural beauty, rich history, and modern luxury.
+                {t.maribor.p1}
               </p>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                From the world's oldest vine to world-class skiing, Maribor is Slovenia's hidden gem waiting to be explored from the comfort of our luxury apartments.
+                {t.maribor.p2}
               </p>
               <a href="https://www.visitmaribor.si/en/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-semibold border-b-2 border-gold pb-1 hover:text-gold transition-colors">
-                Explore Destination <ChevronRight size={18} />
+                {t.maribor.cta} <ChevronRight size={18} />
               </a>
             </div>
           </div>
@@ -232,23 +234,23 @@ export function Home() {
       <section id="amenities" className="py-24 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">Luxury Included</span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Premium Amenities</h2>
-            <p className="text-gray-500 text-lg leading-relaxed">Every detail considered for your comfort and convenience</p>
+            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">{t.amenitiesSection.badge}</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.amenitiesSection.title}</h2>
+            <p className="text-gray-500 text-lg leading-relaxed">{t.amenitiesSection.subtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Utensils />, title: "Gourmet Kitchen", desc: "Fully equipped with premium appliances" },
-              { icon: <Wifi />, title: "High-Speed WiFi", desc: "Ultra-fast internet throughout" },
-              { icon: <Car />, title: "Free Parking", desc: "Private secure parking spaces" },
-              { icon: <Tv />, title: "Premium Entertainment", desc: "Smart TV with streaming services" },
-              { icon: <Zap />, title: "Air Conditioning", desc: "Climate control in every room" },
-              { icon: <Briefcase />, title: "Workspace", desc: "Dedicated office area" },
-              { icon: <Dog />, title: "Pet Friendly", desc: "Your furry friends welcome" },
-              { icon: <Key />, title: "Self Check-in", desc: "24/7 keyless entry system" },
-              { icon: <TreePine />, title: "Garden Access", desc: "Private outdoor spaces" },
-              { icon: <Flame />, title: "BBQ Facilities", desc: "Professional grill area" },
+              { icon: <Utensils />, title: t.amenitiesSection.kitchen, desc: t.amenitiesSection.kitchenDesc },
+              { icon: <Wifi />, title: t.amenitiesSection.wifi, desc: t.amenitiesSection.wifiDesc },
+              { icon: <Car />, title: t.amenitiesSection.parking, desc: t.amenitiesSection.parkingDesc },
+              { icon: <Tv />, title: t.amenitiesSection.tv, desc: t.amenitiesSection.tvDesc },
+              { icon: <Zap />, title: t.amenitiesSection.ac, desc: t.amenitiesSection.acDesc },
+              { icon: <Briefcase />, title: t.amenitiesSection.workspace, desc: t.amenitiesSection.workspaceDesc },
+              { icon: <Dog />, title: t.amenitiesSection.pets, desc: t.amenitiesSection.petsDesc },
+              { icon: <Key />, title: t.amenitiesSection.checkin, desc: t.amenitiesSection.checkinDesc },
+              { icon: <TreePine />, title: t.amenitiesSection.garden, desc: t.amenitiesSection.gardenDesc },
+              { icon: <Flame />, title: t.amenitiesSection.bbq, desc: t.amenitiesSection.bbqDesc },
             ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex items-start gap-4">
                 <div className="p-3 bg-gold/10 rounded-full text-gold shrink-0">
@@ -268,15 +270,15 @@ export function Home() {
       <section id="comparison" className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">Compare Properties</span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Find Your Perfect Match</h2>
+            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">{t.comparison.badge}</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.comparison.title}</h2>
           </div>
 
           <div className="overflow-x-auto rounded-3xl shadow-xl border border-gray-100">
             <table className="w-full min-w-[900px] text-left border-collapse">
               <thead>
                 <tr className="bg-primary text-white">
-                  <th className="p-6 font-medium text-sm uppercase tracking-wider">Features</th>
+                  <th className="p-6 font-medium text-sm uppercase tracking-wider">{t.comparison.features}</th>
                   <th className="p-6 font-medium text-sm uppercase tracking-wider">Baron House</th>
                   <th className="p-6 font-medium text-sm uppercase tracking-wider">Big Open</th>
                   <th className="p-6 font-medium text-sm uppercase tracking-wider">LTE High</th>
@@ -331,8 +333,8 @@ export function Home() {
                 <Lock size={36} className="text-gold" />
               </div>
               <div>
-                <h3 className="text-2xl font-medium mb-2">Arrive on Your Own Terms</h3>
-                <p className="text-white/70 max-w-md">Your keys are waiting in a secure keylocker at every apartment. Check in anytime — no phone calls, no waiting, no contact needed. Complete privacy from the moment you arrive.</p>
+                <h3 className="text-2xl font-medium mb-2">{t.privacy.arriveTitle}</h3>
+                <p className="text-white/70 max-w-md">{t.privacy.arriveDesc}</p>
               </div>
             </div>
             <div className="hidden md:block w-px h-20 bg-white/20"></div>
@@ -341,8 +343,8 @@ export function Home() {
                 <DoorOpen size={36} className="text-gold" />
               </div>
               <div>
-                <h3 className="text-2xl font-medium mb-2">Your Space, Your Pace</h3>
-                <p className="text-white/70 max-w-md">Each apartment has a private entrance. No shared lobbies, no front desk — just you and your space. Perfect for guests who value independence and discretion.</p>
+                <h3 className="text-2xl font-medium mb-2">{t.privacy.spaceTitle}</h3>
+                <p className="text-white/70 max-w-md">{t.privacy.spaceDesc}</p>
               </div>
             </div>
           </div>
@@ -363,29 +365,29 @@ export function Home() {
             </div>
             
             <div className="text-center md:text-left">
-              <span className="text-gold font-semibold uppercase tracking-wider text-sm mb-2 block">Meet Your Host</span>
-              <h3 className="text-3xl md:text-4xl font-serif mb-6">Hosted by Jernej</h3>
+              <span className="text-gold font-semibold uppercase tracking-wider text-sm mb-2 block">{t.hostSection.badge}</span>
+              <h3 className="text-3xl md:text-4xl font-serif mb-6">{t.hostSection.title}</h3>
               
               <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
                 <span className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
-                   <Star size={14} className="text-gold fill-gold" /> 1,131 Reviews
+                   <Star size={14} className="text-gold fill-gold" /> 1,131 {t.hostSection.reviews}
                 </span>
                 <span className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
-                   <Crown size={14} className="text-gold" /> Superhost
+                   <Crown size={14} className="text-gold" /> {t.hostSection.superhost}
                 </span>
                 <span className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
-                   <Users size={14} className="text-gold" /> 8 Years Hosting
+                   <Users size={14} className="text-gold" /> 8 {t.hostSection.yearsHosting}
                 </span>
               </div>
               
               <p className="text-gray-500 leading-relaxed mb-8 italic text-lg">
-                "Good vibes speak louder than words." I'm obsessed with breathwork, yoga, Pilates, and awareness. As your host, I'm dedicated to ensuring you have a perfect stay in Maribor.
+                {t.hostSection.bio}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start text-sm text-gray-400">
-                <span>Response rate: 97%</span>
+                <span>{t.hostSection.responseRate}</span>
                 <span className="hidden sm:inline">•</span>
-                <span>Responds within an hour</span>
+                <span>{t.hostSection.responseTime}</span>
               </div>
             </div>
           </div>
@@ -396,9 +398,9 @@ export function Home() {
       <section id="booking" className="py-24 bg-primary text-white">
         <div className="max-w-[1400px] mx-auto px-6 text-center">
           <div className="mb-16">
-            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">Reserve Your Stay</span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Book Your Luxury Experience</h2>
-            <p className="text-white/70 text-lg">Check availability and secure your dates</p>
+            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">{t.booking.badge}</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">{t.booking.title}</h2>
+            <p className="text-white/70 text-lg">{t.booking.subtitle}</p>
           </div>
 
           <div className="bg-white rounded-3xl p-4 md:p-8 max-w-4xl mx-auto text-primary">
