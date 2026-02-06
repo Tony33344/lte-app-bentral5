@@ -89,6 +89,9 @@ export function Header() {
             <Link to="/high-q" className={`px-4 py-2 rounded-full text-xs font-medium transition-all ${isActive('/high-q') ? 'bg-primary text-white shadow-md' : 'text-gray-500 hover:text-primary'}`}>
               High Q
             </Link>
+            <Link to="/baron-house" className={`px-4 py-2 rounded-full text-xs font-medium transition-all ${isActive('/baron-house') ? 'bg-primary text-white shadow-md' : 'text-gray-500 hover:text-primary'}`}>
+              Baron
+            </Link>
           </div>
           
           <a href="#booking" className="hidden xl:flex items-center justify-center w-10 h-10 rounded-full bg-gold text-primary hover:bg-gold-light transition-all shadow-md hover:-translate-y-0.5">
@@ -128,6 +131,9 @@ export function Header() {
             </li>
             <li>
               <Link to="/high-q" onClick={toggleMobileMenu} className="text-xl font-medium text-gray-600 hover:text-primary">High Q Apartment</Link>
+            </li>
+            <li>
+              <Link to="/baron-house" onClick={toggleMobileMenu} className="text-xl font-medium text-gray-600 hover:text-primary">Baron House</Link>
             </li>
             
             <li className="mt-8">

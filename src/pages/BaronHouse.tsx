@@ -1,52 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wifi, Utensils, TreePine, Car, Dog, Star, ShieldCheck, Clock, VolumeX, Ban, GlassWater, Footprints, Info, Users, Bed, Bath, Crown, Leaf, Lock, DoorOpen } from 'lucide-react';
+import { Wifi, Utensils, Zap, Car, Dog, Star, ShieldCheck, Clock, VolumeX, Ban, GlassWater, Footprints, Info, Users, Bed, Bath, Lock, Flame, Sparkles, DoorOpen, Tv } from 'lucide-react';
 import { BentralWidget } from '../components/BentralWidget';
 import { useLightbox } from '../components/ImageLightbox';
 
-export function BigOpen() {
+export function BaronHouse() {
   const { open } = useLightbox();
 
   const galleryImages = [
-    '/bigopen/hero2.avif',
-    '/bigopen/hero3.avif',
-    '/bigopen/hero4.avif',
-    '/bigopen/hero%20garden.avif',
-    '/bigopen/hero%20bathroom.avif',
+    '/Baron/livingroom2.jpeg',
+    '/Baron/sauna1.avif',
+    '/Baron/bedroom1.jpeg',
+    '/Baron/bathroom.jpg',
+    '/Baron/sauna2.avif',
   ];
 
   const touchImages = [
-    '/bigopen/hero%20garden%202.avif',
-    '/bigopen/hero4%20bedroom%201%20mattress.avif',
-    '/bigopen/hero%20table.avif',
-    '/bigopen/hero%20bedroom%20detail.avif',
-    '/bigopen/hero%20bathroom%202.avif',
-    '/bigopen/hero4%20bedroom%202.avif',
-    '/bigopen/hero%20bathroom%203.avif',
+    '/Baron/sparklingwinedetail.jpg',
+    '/Baron/pilowdetail.jpg',
+    '/Baron/gamesdetail.jpg',
+    '/Baron/infomaribordetail.avif',
   ];
 
   return (
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: 'url(/bigopen/hero1.avif)' }}></div>
+        <div className="absolute inset-0 bg-cover bg-center z-0" style={{ backgroundImage: 'url(/Baron/livingroom1.jpeg)' }}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/60 z-10"></div>
         
         <div className="relative z-20 text-center text-white px-4 max-w-4xl mx-auto pt-20">
-          <span className="inline-block bg-gold text-primary px-6 py-2 rounded-full font-semibold text-sm uppercase tracking-wider mb-8">Family Terrace</span>
+          <span className="inline-block bg-gold text-primary px-6 py-2 rounded-full font-semibold text-sm uppercase tracking-wider mb-8">Private & Intimate</span>
           <h1 className="font-display text-6xl md:text-8xl mb-6 leading-[0.9] text-shadow-lg">
-            BIG OPEN
+            BARON HOUSE
           </h1>
           <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto leading-relaxed text-shadow-md opacity-90 mb-12">
-            Spacious 90m² luxury apartment with expansive terrace and private garden
+            Cosy one-bedroom retreat with private IR sauna, ambient lighting, and complete privacy
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 md:gap-12">
              <div className="flex items-center gap-2 text-lg">
-               <Crown className="text-gold" /> <span>Luxury Living</span>
+               <Flame className="text-gold" /> <span>IR Sauna</span>
              </div>
              <div className="flex items-center gap-2 text-lg">
-               <span className="text-gold font-bold">7+1</span> <span>Guests</span>
+               <span className="text-gold font-bold">4</span> <span>Guests</span>
              </div>
              <div className="flex items-center gap-2 text-lg">
                <Star className="text-gold fill-gold" /> <span>4.67 Rating</span>
@@ -60,7 +57,7 @@ export function BigOpen() {
         <div className="max-w-[1400px] mx-auto px-6 text-sm text-gray-500">
           <Link to="/" className="hover:text-gold transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <span className="text-primary font-medium">Big Open Apartment</span>
+          <span className="text-primary font-medium">Baron House Apartment</span>
         </div>
       </div>
 
@@ -96,37 +93,37 @@ export function BigOpen() {
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 className="text-4xl font-serif mb-8">Big Open Apartment</h2>
+              <h2 className="text-4xl font-serif mb-8">Baron House Apartment</h2>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                Experience unparalleled luxury in our flagship 90m² apartment, meticulously designed for up to 7+1 guests. This expansive residence features a magnificent terrace with professional BBQ facilities, a private garden oasis, and children's playground - perfect for families and groups seeking the ultimate Maribor experience.
+                A warm, cosy one-bedroom apartment designed for comfort, privacy, and deep relaxation. Featuring a king-size bed, a bright living room with convertible sofa beds, and a private infrared sauna in a beautifully designed bathroom with floor heating and adjustable LED lighting. Natural green living walls, ambient lighting, and thoughtful design details invite you to slow down and recharge.
               </p>
               
               <div className="space-y-8">
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center shrink-0 text-gold">
-                    <Crown size={24} />
+                    <Flame size={24} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium mb-1">Premium Comfort</h4>
-                    <p className="text-gray-500">36cm high diamond 7-zone orthopedic mattress (€1600 value) ensuring your best rest</p>
+                    <h4 className="text-xl font-medium mb-1">Private IR Sauna</h4>
+                    <p className="text-gray-500">Infrared sauna in the bathroom with floor heating, adjustable LED lighting, integrated music — a true spa-like atmosphere</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center shrink-0 text-gold">
-                    <Leaf size={24} />
+                    <Sparkles size={24} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium mb-1">Private Oasis</h4>
-                    <p className="text-gray-500">Expansive terrace with BBQ grill, self-catering garden, and children's playground</p>
+                    <h4 className="text-xl font-medium mb-1">Ambient Wellness</h4>
+                    <p className="text-gray-500">Adjustable bedroom lighting for every mood, virtual guided meditation, light and aroma therapy inside the sauna</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center shrink-0 text-gold">
-                    <Car size={24} />
+                    <Lock size={24} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-medium mb-1">Convenience First</h4>
-                    <p className="text-gray-500">Free private parking, private entrance, self check-in, and just 5 minutes to city center</p>
+                    <h4 className="text-xl font-medium mb-1">Total Privacy</h4>
+                    <p className="text-gray-500">Private entrance, mini terrace, and keylocker self check-in — arrive anytime without needing to meet anyone</p>
                   </div>
                 </div>
               </div>
@@ -134,11 +131,11 @@ export function BigOpen() {
 
             {/* Gallery Grid */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/bigopen/hero2.avif)' }} onClick={() => open('/bigopen/hero2.avif', galleryImages)}></div>
-              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/bigopen/hero3.avif)' }} onClick={() => open('/bigopen/hero3.avif', galleryImages)}></div>
-              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/bigopen/hero4.avif)' }} onClick={() => open('/bigopen/hero4.avif', galleryImages)}></div>
-              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/bigopen/hero%20garden.avif)' }} onClick={() => open('/bigopen/hero%20garden.avif', galleryImages)}></div>
-              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/bigopen/hero%20bathroom.avif)' }} onClick={() => open('/bigopen/hero%20bathroom.avif', galleryImages)}></div>
+              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/Baron/livingroom2.jpeg)' }} onClick={() => open('/Baron/livingroom2.jpeg', galleryImages)}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/Baron/sauna1.avif)' }} onClick={() => open('/Baron/sauna1.avif', galleryImages)}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/Baron/bedroom1.jpeg)' }} onClick={() => open('/Baron/bedroom1.jpeg', galleryImages)}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/Baron/bathroom.jpg)' }} onClick={() => open('/Baron/bathroom.jpg', galleryImages)}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/Baron/sauna2.avif)' }} onClick={() => open('/Baron/sauna2.avif', galleryImages)}></div>
             </div>
           </div>
         </div>
@@ -154,14 +151,18 @@ export function BigOpen() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
              {[
-               { icon: <Users />, title: "Capacity", desc: "Up to 7 Guests" },
-               { icon: <Bed />, title: "2 Bedrooms", desc: "Orthopedic mattresses" },
-               { icon: <Bath />, title: "1 Bathroom", desc: "Premium fixtures" },
-               { icon: <TreePine />, title: "Private Garden", desc: "With BBQ & Playground" },
-               { icon: <Utensils />, title: "Full Kitchen", desc: "Dishwasher & Oven" },
+               { icon: <Users />, title: "Capacity", desc: "Up to 4 Guests" },
+               { icon: <Bed />, title: "1 Bedroom", desc: "King-size bed" },
+               { icon: <Bath />, title: "1 Bathroom", desc: "Floor heating & LED" },
+               { icon: <Flame />, title: "IR Sauna", desc: "Private infrared sauna" },
+               { icon: <Utensils />, title: "Full Kitchen", desc: "Fully equipped" },
                { icon: <Wifi />, title: "High-Speed WiFi", desc: "Free throughout" },
                { icon: <Car />, title: "Free Parking", desc: "Private secure spot" },
                { icon: <Dog />, title: "Pet Friendly", desc: "All pets welcome" },
+               { icon: <Tv />, title: "Cable TV", desc: "With ambient backlight" },
+               { icon: <Zap />, title: "Air Conditioning", desc: "Climate control" },
+               { icon: <Lock />, title: "Self Check-in", desc: "Keylocker — arrive anytime" },
+               { icon: <Sparkles />, title: "Aroma Therapy", desc: "Inside sauna experience" },
              ].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex items-start gap-4">
                 <div className="p-3 bg-gold/10 rounded-full text-gold shrink-0">
@@ -177,7 +178,7 @@ export function BigOpen() {
         </div>
       </section>
 
-      {/* Thoughtful Touches */}
+      {/* Detail Images Section */}
       <section className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -187,52 +188,34 @@ export function BigOpen() {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/bigopen/hero%20garden%202.avif', touchImages)}>
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/bigopen/hero%20garden%202.avif)' }}></div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/Baron/sparklingwinedetail.jpg', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/Baron/sparklingwinedetail.jpg)' }}></div>
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Private Garden Oasis</span>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Welcome Sparkling</span>
             </div>
-            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/bigopen/hero4%20bedroom%201%20mattress.avif', touchImages)}>
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/bigopen/hero4%20bedroom%201%20mattress.avif)' }}></div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/Baron/pilowdetail.jpg', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/Baron/pilowdetail.jpg)' }}></div>
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Diamond Mattress</span>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Organic Pillows</span>
             </div>
-            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/bigopen/hero%20table.avif', touchImages)}>
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/bigopen/hero%20table.avif)' }}></div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/Baron/gamesdetail.jpg', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/Baron/gamesdetail.jpg)' }}></div>
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Dining for the Family</span>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Board Games</span>
             </div>
-            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/bigopen/hero%20bedroom%20detail.avif', touchImages)}>
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/bigopen/hero%20bedroom%20detail.avif)' }}></div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/Baron/infomaribordetail.avif', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/Baron/infomaribordetail.avif)' }}></div>
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Cosy Bedroom Nook</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-            <div className="relative h-56 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/bigopen/hero%20bathroom%202.avif', touchImages)}>
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/bigopen/hero%20bathroom%202.avif)' }}></div>
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Spa-Style Bathroom</span>
-            </div>
-            <div className="relative h-56 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/bigopen/hero4%20bedroom%202.avif', touchImages)}>
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/bigopen/hero4%20bedroom%202.avif)' }}></div>
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Second Bedroom Retreat</span>
-            </div>
-            <div className="relative h-56 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/bigopen/hero%20bathroom%203.avif', touchImages)}>
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/bigopen/hero%20bathroom%203.avif)' }}></div>
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
-              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Fresh Towels & Essentials</span>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Local Guide</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Host Section */}
-      <section id="host" className="py-24 bg-gray-50">
+      <section id="host" className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-white rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12">
+          <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12">
             <div className="shrink-0">
                <div className="w-56 h-56 rounded-full overflow-hidden border-8 border-white shadow-xl mx-auto lg:mx-0">
                   <img src="/jernej host.png" alt="Jernej" className="w-full h-full object-cover" />
@@ -261,7 +244,7 @@ export function BigOpen() {
               </h4>
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-center gap-3"><Clock size={18} className="text-gold" /> Check-in: After 4:00 PM</li>
-                <li className="flex items-center gap-3"><Clock size={18} className="text-gold" /> Checkout: Before 10:00 AM</li>
+                <li className="flex items-center gap-3"><Clock size={18} className="text-gold" /> Checkout: Before 11:00 AM</li>
                 <li className="flex items-center gap-3"><VolumeX size={18} className="text-gold" /> Quiet hours: 11:00 PM - 7:00 AM</li>
                 <li className="flex items-center gap-3"><Ban size={18} className="text-gold" /> No smoking</li>
                 <li className="flex items-center gap-3"><GlassWater size={18} className="text-gold" /> No parties or events</li>
@@ -297,11 +280,11 @@ export function BigOpen() {
         <div className="max-w-[1400px] mx-auto px-6">
            <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">Reserve Your Stay</span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6">Book Big Open Apartment</h2>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">Book Baron House</h2>
           </div>
           
           <div className="max-w-4xl mx-auto bg-gray-50 rounded-3xl p-8 md:p-12">
-            <BentralWidget unitId="5f7a6b314d675f4e" />
+            <BentralWidget unitId="5f7a6b314d515f4e" />
           </div>
         </div>
       </section>

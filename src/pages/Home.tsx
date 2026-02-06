@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, Bed, Bath, Star, Crown, Car, Wifi, Tv, Utensils, Zap, Briefcase, Dog, Key, TreePine, Flame, ChevronRight, Check } from 'lucide-react';
+import { Users, Bed, Bath, Star, Crown, Car, Wifi, Tv, Utensils, Zap, Briefcase, Dog, Key, TreePine, Flame, ChevronRight, Check, Lock, DoorOpen } from 'lucide-react';
+import { BentralWidget } from '../components/BentralWidget';
 
 export function Home() {
-  const [activeTab, setActiveTab] = useState('bigopen');
+  const [activeTab, setActiveTab] = useState('baron');
+
+  const unitIds: Record<string, string> = {
+    baron: '5f7a6b314d515f4e',
+    bigopen: '5f7a6b314d675f4e',
+    ltehigh: '5f7a6b314d775f4e',
+    highun: '5f7a6b314e415f4e',
+  };
 
   return (
     <div className="bg-white">
@@ -21,17 +29,21 @@ export function Home() {
             Experience the pinnacle of comfort in our exclusive collection of premium apartments in the heart of Maribor
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+             <Link to="/baron-house" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium transition-all group">
+                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Private & Intimate</span>
+                <span className="text-lg">Baron House</span>
+             </Link>
              <Link to="/big-open" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium transition-all group">
-                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Best Seller</span>
+                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Family Terrace</span>
                 <span className="text-lg">Big Open</span>
              </Link>
              <Link to="/lte-high" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium transition-all group">
-                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Wellness</span>
+                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Playful Open Space</span>
                 <span className="text-lg">LTE High</span>
              </Link>
              <Link to="/high-q" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-medium transition-all group">
-                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Premium</span>
+                <span className="block text-xs uppercase tracking-widest text-gold mb-1">Business Comfort</span>
                 <span className="text-lg">High Q</span>
              </Link>
           </div>
@@ -47,11 +59,46 @@ export function Home() {
             <p className="text-gray-500 text-lg leading-relaxed">Each apartment is uniquely designed to provide an unforgettable experience in the heart of Maribor</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Baron House */}
+            <Link to="/baron-house" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/Baron/livingroom1.jpeg)' }}>
+                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Private & Intimate</div>
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <div className="font-display text-4xl">€90 <span className="text-sm font-sans opacity-80">/ night</span></div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-serif mb-3 group-hover:text-gold transition-colors">Baron House</h3>
+                <p className="text-gray-500 mb-6 line-clamp-2">Cosy one-bedroom retreat with private IR sauna, ambient lighting, and complete privacy</p>
+                <div className="flex justify-between items-center py-6 border-t border-gray-100 mb-6">
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <Users size={18} className="text-gold" /> 4 Guests
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <Bed size={18} className="text-gold" /> 1 Bed
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <Bath size={18} className="text-gold" /> 1 Bath
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-1.5 text-sm font-medium">
+                    <Star size={16} className="text-gold fill-gold" />
+                    <span>4.67 (349)</span>
+                  </div>
+                  <span className="text-primary font-medium text-sm uppercase tracking-wider group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                    Details <ChevronRight size={16} />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
             {/* Big Open */}
             <Link to="/big-open" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/bigopen/hero1.avif)' }}>
-                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Best Seller</div>
+                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Family Terrace</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <div className="font-display text-4xl">€120 <span className="text-sm font-sans opacity-80">/ night</span></div>
                 </div>
@@ -86,7 +133,7 @@ export function Home() {
             {/* LTE High */}
             <Link to="/lte-high" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/ltehigh/livingroom.jpg)' }}>
-                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Wellness</div>
+                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Playful Open Space</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <div className="font-display text-4xl">€100 <span className="text-sm font-sans opacity-80">/ night</span></div>
                 </div>
@@ -120,8 +167,8 @@ export function Home() {
 
             {/* High Q */}
             <Link to="/high-q" className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/highun/living room.avif)' }}>
-                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Premium</div>
+              <div className="relative h-72 bg-cover bg-center" style={{ backgroundImage: 'url(/highun/living%20room.avif)' }}>
+                <div className="absolute top-6 right-6 bg-gold text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Business Comfort</div>
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <div className="font-display text-4xl">€90 <span className="text-sm font-sans opacity-80">/ night</span></div>
                 </div>
@@ -161,7 +208,7 @@ export function Home() {
         <div className="max-w-[1400px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[500px] group">
-              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: 'url(/highun/garden.avif)' }}></div>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: 'url(/mariborwinter.jpg)' }}></div>
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
             </div>
             <div className="lg:pl-12">
@@ -226,29 +273,35 @@ export function Home() {
           </div>
 
           <div className="overflow-x-auto rounded-3xl shadow-xl border border-gray-100">
-            <table className="w-full min-w-[800px] text-left border-collapse">
+            <table className="w-full min-w-[900px] text-left border-collapse">
               <thead>
                 <tr className="bg-primary text-white">
                   <th className="p-6 font-medium text-sm uppercase tracking-wider">Features</th>
-                  <th className="p-6 font-medium text-sm uppercase tracking-wider">Big Open Apartment</th>
-                  <th className="p-6 font-medium text-sm uppercase tracking-wider">LTE High Apartment</th>
-                  <th className="p-6 font-medium text-sm uppercase tracking-wider">High Q Apartment</th>
+                  <th className="p-6 font-medium text-sm uppercase tracking-wider">Baron House</th>
+                  <th className="p-6 font-medium text-sm uppercase tracking-wider">Big Open</th>
+                  <th className="p-6 font-medium text-sm uppercase tracking-wider">LTE High</th>
+                  <th className="p-6 font-medium text-sm uppercase tracking-wider">High Q</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {[
-                   { label: "Capacity", v1: "Up to 7+1 guests", v2: "Up to 6 guests", v3: "Up to 6 guests" },
-                   { label: "Size", v1: "90m²", v2: "Open Space", v3: "High Ceiling" },
-                   { label: "Bedrooms", v1: "2 bedrooms", v2: "1 bedroom", v3: "2 bedrooms" },
-                   { label: "Outdoor Space", v1: "Large terrace + garden", v2: "Terrace", v3: "Outdoor terrace", check: true },
-                   { label: "Yoga Hammock", v1: "-", v2: "Aerial yoga", v3: "-", check: true },
-                   { label: "Smart TV", v1: "Cable TV", v2: "Netflix", v3: "HBO Max, Disney+", check: true },
-                   { label: "Parking", v1: "Free private", v2: "Free private", v3: "Free private", check: true },
-                   { label: "Pets Allowed", v1: "All pets", v2: "All pets", v3: "All pets", check: true },
-                   { label: "Starting Rate", v1: "€120/night", v2: "€100/night", v3: "€90/night", bold: true },
+                   { label: "Style", v0: "Private & Intimate", v1: "Family Terrace", v2: "Playful Open Space", v3: "Business Comfort" },
+                   { label: "Capacity", v0: "Up to 4 guests", v1: "Up to 7+1 guests", v2: "Up to 6 guests", v3: "Up to 5-6 guests" },
+                   { label: "Bedrooms", v0: "1 bedroom", v1: "2 bedrooms", v2: "1 bedroom", v3: "2 bedrooms" },
+                   { label: "IR Sauna", v0: "Private sauna", v1: "-", v2: "-", v3: "-", check: true },
+                   { label: "Outdoor Space", v0: "Mini terrace", v1: "Large terrace + garden", v2: "Terrace", v3: "Outdoor terrace", check: true },
+                   { label: "Yoga Hammock", v0: "-", v1: "-", v2: "Aerial yoga", v3: "-", check: true },
+                   { label: "Smart TV", v0: "Cable TV", v1: "Cable TV", v2: "Netflix", v3: "HBO Max, Disney+", check: true },
+                   { label: "Parking", v0: "Free private", v1: "Free private", v2: "Free private", v3: "Free private", check: true },
+                   { label: "Pets Allowed", v0: "All pets", v1: "All pets", v2: "All pets", v3: "All pets", check: true },
+                   { label: "Starting Rate", v0: "€90/night", v1: "€120/night", v2: "€100/night", v3: "€90/night", bold: true },
                 ].map((row, idx) => (
                   <tr key={idx} className="hover:bg-gray-50 transition-colors">
                     <td className="p-6 font-medium text-primary">{row.label}</td>
+                    <td className="p-6 text-gray-600">
+                      {row.check && row.v0 !== '-' && <Check size={16} className="inline text-gold mr-2" />}
+                      <span className={row.bold ? 'font-bold text-primary text-lg' : ''}>{row.v0}</span>
+                    </td>
                     <td className="p-6 text-gray-600">
                       {row.check && row.v1 !== '-' && <Check size={16} className="inline text-gold mr-2" />}
                       <span className={row.bold ? 'font-bold text-primary text-lg' : ''}>{row.v1}</span>
@@ -265,6 +318,33 @@ export function Home() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Keylocker / Privacy Section */}
+      <section className="py-16 bg-primary text-white">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10 text-center md:text-left">
+            <div className="flex items-center gap-5">
+              <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center shrink-0">
+                <Lock size={36} className="text-gold" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-medium mb-2">Arrive on Your Own Terms</h3>
+                <p className="text-white/70 max-w-md">Your keys are waiting in a secure keylocker at every apartment. Check in anytime — no phone calls, no waiting, no contact needed. Complete privacy from the moment you arrive.</p>
+              </div>
+            </div>
+            <div className="hidden md:block w-px h-20 bg-white/20"></div>
+            <div className="flex items-center gap-5">
+              <div className="w-20 h-20 bg-gold/20 rounded-full flex items-center justify-center shrink-0">
+                <DoorOpen size={36} className="text-gold" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-medium mb-2">Your Space, Your Pace</h3>
+                <p className="text-white/70 max-w-md">Each apartment has a private entrance. No shared lobbies, no front desk — just you and your space. Perfect for guests who value independence and discretion.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -312,7 +392,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Booking Widget Section Placeholder */}
+      {/* Booking Widget Section */}
       <section id="booking" className="py-24 bg-primary text-white">
         <div className="max-w-[1400px] mx-auto px-6 text-center">
           <div className="mb-16">
@@ -323,6 +403,12 @@ export function Home() {
 
           <div className="bg-white rounded-3xl p-4 md:p-8 max-w-4xl mx-auto text-primary">
             <div className="flex flex-wrap gap-2 justify-center mb-8 bg-gray-100 p-2 rounded-xl inline-flex">
+              <button 
+                onClick={() => setActiveTab('baron')}
+                className={`px-6 py-2 rounded-lg font-medium transition-all ${activeTab === 'baron' ? 'bg-white shadow-md text-primary' : 'text-gray-500 hover:text-primary'}`}
+              >
+                Baron House
+              </button>
               <button 
                 onClick={() => setActiveTab('bigopen')}
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${activeTab === 'bigopen' ? 'bg-white shadow-md text-primary' : 'text-gray-500 hover:text-primary'}`}
@@ -343,15 +429,8 @@ export function Home() {
               </button>
             </div>
 
-            <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center bg-gray-50">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-sm text-gold">
-                <Key size={24} />
-              </div>
-              <h3 className="text-xl font-medium mb-2">Booking System Integration</h3>
-              <p className="text-gray-500 mb-6">Bentral booking widget for {activeTab === 'bigopen' ? 'Big Open' : activeTab === 'ltehigh' ? 'LTE High' : 'High Q'} would appear here.</p>
-              <button className="bg-gold text-primary px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gold-light transition-colors">
-                Proceed to Booking
-              </button>
+            <div className="rounded-xl min-h-[300px] bg-gray-50 p-4">
+              <BentralWidget key={activeTab} unitId={unitIds[activeTab]} />
             </div>
           </div>
         </div>

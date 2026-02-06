@@ -1,8 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Tv, Wifi, Utensils, TreePine, Zap, Car, Dog, Star, ShieldCheck, Clock, VolumeX, Ban, GlassWater, Footprints, Info, Users, Bed, Bath, Activity, Smartphone } from 'lucide-react';
+import { Tv, Wifi, Car, Dog, Star, ShieldCheck, Clock, VolumeX, Ban, GlassWater, Footprints, Info, Users, Bed, Bath, Activity, Smartphone, Lock, DoorOpen } from 'lucide-react';
+import { BentralWidget } from '../components/BentralWidget';
+import { useLightbox } from '../components/ImageLightbox';
 
 export function LTEHigh() {
+  const { open } = useLightbox();
+
+  const galleryImages = [
+    '/ltehigh/livingroom.jpg',
+    '/ltehigh/bathrooom.avif',
+    '/ltehigh/livingroom2.avif',
+    '/ltehigh/bedroom.jpg',
+    '/ltehigh/garden.avif',
+  ];
+
+  const touchImages = [
+    '/ltehigh/details.jpg',
+    '/ltehigh/kitchendetails.avif',
+    '/ltehigh/detailsbootle.avif',
+    '/ltehigh/entrance.avif',
+    '/ltehigh/livingroom5couch.avif',
+    '/ltehigh/livingroom3tablebed.avif',
+    '/ltehigh/bathrooom2.avif',
+  ];
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -41,6 +63,33 @@ export function LTEHigh() {
           <span className="text-primary font-medium">LTE High Apartment</span>
         </div>
       </div>
+
+      {/* Self Check-in / Privacy Banner */}
+      <section className="bg-primary text-white py-12">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center shrink-0">
+                <Lock size={32} className="text-gold" />
+              </div>
+              <div>
+                <h3 className="text-xl font-medium mb-1">Arrive on Your Own Terms</h3>
+                <p className="text-white/70 text-sm max-w-md">Your keys are waiting in a secure keylocker. Check in anytime, no contact needed — enjoy complete privacy from the moment you arrive.</p>
+              </div>
+            </div>
+            <div className="hidden md:block w-px h-16 bg-white/20"></div>
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center shrink-0">
+                <DoorOpen size={32} className="text-gold" />
+              </div>
+              <div>
+                <h3 className="text-xl font-medium mb-1">Private Entrance</h3>
+                <p className="text-white/70 text-sm max-w-md">Your own separate entrance and mini terrace ensure full discretion. It's your private space — no shared hallways, no interruptions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Overview Section */}
       <section id="overview" className="py-24">
@@ -85,10 +134,11 @@ export function LTEHigh() {
 
             {/* Gallery Grid */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/ltehigh/livingroom.jpg)' }}></div>
-              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/ltehigh/bathrooom.avif)' }}></div>
-              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/ltehigh/livingroom2.avif)' }}></div>
-              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg" style={{ backgroundImage: 'url(/ltehigh/garden.avif)' }}></div>
+              <div className="col-span-2 h-64 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/ltehigh/livingroom.jpg)' }} onClick={() => open('/ltehigh/livingroom.jpg', galleryImages)}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/ltehigh/bathrooom.avif)' }} onClick={() => open('/ltehigh/bathrooom.avif', galleryImages)}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/ltehigh/livingroom2.avif)' }} onClick={() => open('/ltehigh/livingroom2.avif', galleryImages)}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/ltehigh/bedroom.jpg)' }} onClick={() => open('/ltehigh/bedroom.jpg', galleryImages)}></div>
+              <div className="h-48 bg-cover bg-center rounded-2xl shadow-lg cursor-pointer" style={{ backgroundImage: 'url(/ltehigh/garden.avif)' }} onClick={() => open('/ltehigh/garden.avif', galleryImages)}></div>
             </div>
           </div>
         </div>
@@ -127,10 +177,62 @@ export function LTEHigh() {
         </div>
       </section>
 
+      {/* Thoughtful Touches */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-gold font-semibold uppercase tracking-[0.2em] text-sm block mb-4">The Details</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-6">Thoughtful Touches</h2>
+            <p className="text-gray-500 text-lg">Every detail is designed to make your stay special</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/ltehigh/details.jpg', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/ltehigh/details.jpg)' }}></div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Curated Décor</span>
+            </div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/ltehigh/kitchendetails.avif', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/ltehigh/kitchendetails.avif)' }}></div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Kitchen Essentials</span>
+            </div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/ltehigh/detailsbootle.avif', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/ltehigh/detailsbootle.avif)' }}></div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Welcome Treats</span>
+            </div>
+            <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/ltehigh/entrance.avif', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/ltehigh/entrance.avif)' }}></div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Charming Entrance</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+            <div className="relative h-56 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/ltehigh/livingroom5couch.avif', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/ltehigh/livingroom5couch.avif)' }}></div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Sink-In Sofa Corner</span>
+            </div>
+            <div className="relative h-56 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/ltehigh/livingroom3tablebed.avif', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/ltehigh/livingroom3tablebed.avif)' }}></div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Open Living Space</span>
+            </div>
+            <div className="relative h-56 rounded-2xl overflow-hidden shadow-lg group cursor-pointer" onClick={() => open('/ltehigh/bathrooom2.avif', touchImages)}>
+              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: 'url(/ltehigh/bathrooom2.avif)' }}></div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+              <span className="absolute bottom-3 left-3 text-white text-sm font-medium">Warm Wood Bathroom</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Host Section */}
-      <section id="host" className="py-24 bg-white">
+      <section id="host" className="py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12">
+          <div className="bg-white rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row items-center gap-12">
             <div className="shrink-0">
                <div className="w-56 h-56 rounded-full overflow-hidden border-8 border-white shadow-xl mx-auto lg:mx-0">
                   <img src="/jernej host.png" alt="Jernej" className="w-full h-full object-cover" />
@@ -190,7 +292,7 @@ export function LTEHigh() {
         </div>
       </section>
 
-      {/* Booking Placeholder */}
+      {/* Booking Section with Bentral Widget */}
       <section id="booking" className="py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6">
            <div className="text-center max-w-3xl mx-auto mb-16">
@@ -198,12 +300,8 @@ export function LTEHigh() {
             <h2 className="text-4xl md:text-5xl font-light mb-6">Book LTE High Apartment</h2>
           </div>
           
-          <div className="max-w-4xl mx-auto bg-gray-50 border-2 border-dashed border-gray-200 rounded-3xl p-16 text-center">
-             <h3 className="text-2xl font-medium mb-4">Booking Widget</h3>
-             <p className="text-gray-500 mb-8">Calendar and availability check for LTE High Apartment would appear here.</p>
-             <button className="bg-gold text-primary px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gold-light transition-colors">
-                Check Availability
-             </button>
+          <div className="max-w-4xl mx-auto bg-gray-50 rounded-3xl p-8 md:p-12">
+            <BentralWidget unitId="5f7a6b314d775f4e" />
           </div>
         </div>
       </section>

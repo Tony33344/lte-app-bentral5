@@ -1,0 +1,19 @@
+baron
+reservation widget<script src="//www.bentral.com/service/embed/booking.js?id=5f7a49334d675f4d&unit=5f7a6b314d515f4e&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+calendar widget<script src="//www.bentral.com/service/embed/calendar.js?uid=5f7a6b314d515f4e&last=true&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+price widget<script src="//www.bentral.com/service/embed/price-list.js?uid=5f7a6b314d515f4e&id=5f7a49334d675f4d&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+
+apartma high
+reservation widget<script src="//www.bentral.com/service/embed/booking.js?id=5f7a49334d675f4d&unit=5f7a6b314d775f4e&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+calendar widget<script src="//www.bentral.com/service/embed/calendar.js?uid=5f7a6b314d515f4e&last=true&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+price widget<script src="//www.bentral.com/service/embed/price-list.js?uid=5f7a6b314d775f4e&id=5f7a49334d675f4d&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+
+unique
+reservation widget<script src="//www.bentral.com/service/embed/booking.js?id=5f7a49334d675f4d&unit=5f7a6b314e415f4e&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+calendar widget<script src="//www.bentral.com/service/embed/calendar.js?uid=5f7a6b314e415f4e&last=true&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+price widget<script src="//www.bentral.com/service/embed/price-list.js?uid=5f7a6b314e415f4e&id=5f7a49334d675f4d&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+
+big open
+reservation widget<script src="//www.bentral.com/service/embed/booking.js?id=5f7a49334d675f4d&unit=5f7a6b314d675f4e&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+calendar widget<script src="//www.bentral.com/service/embed/calendar.js?uid=5f7a6b314d675f4e&last=true&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>
+price widget<script src="//www.bentral.com/service/embed/price-list.js?uid=5f7a6b314d675f4e&id=5f7a49334d675f4d&lang=sl&key=59a610d78995dcb777244c7971e633e3"></script>

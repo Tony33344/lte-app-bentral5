@@ -54,6 +54,9 @@ export function Footer() {
           <h4 className="text-lg font-medium mb-6">Properties</h4>
           <ul className="space-y-3">
             <li>
+              <Link to="/baron-house" className="text-white/70 hover:text-gold transition-colors text-sm">Baron House (4 guests)</Link>
+            </li>
+            <li>
               <Link to="/big-open" className="text-white/70 hover:text-gold transition-colors text-sm">Big Open (7 guests)</Link>
             </li>
             <li>
